@@ -1,6 +1,11 @@
 package com.hotel.hotel_management.room.entity;
 
-import jakarta.persistence.Entity;
+import com.hotel.hotel_management.room.enums.*;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "rooms")
