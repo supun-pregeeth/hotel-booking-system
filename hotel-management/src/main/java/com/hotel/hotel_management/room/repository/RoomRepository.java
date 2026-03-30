@@ -26,4 +26,11 @@ public interface RoomRepository extends JpaRepository<Room, Long> {
 
     //Check if room exists (useful for validation)
     boolean existsByRoomNumber(String roomNumber);
+
+    //Advanced
+    List<Room> findByPriceLessThan(Double price);
+
+    Optional<Room> findByRoomNumberIgnoreCase(String roomNumber);
 }
+
+
