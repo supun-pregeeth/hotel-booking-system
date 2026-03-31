@@ -9,11 +9,11 @@ public interface RoomService {
 
     RoomResponse createRoom(RoomRequest request);
 
-    /*List<RoomResponse> getAllRooms();
+    List<RoomResponse> getAllRooms();
 
     RoomResponse getRoomById(Long id);
 
     RoomResponse updateRoom(Long id, RoomRequest request);
 
-    void deleteRoom(Long id);*/
+    void deleteRoom(Long id);
 }
