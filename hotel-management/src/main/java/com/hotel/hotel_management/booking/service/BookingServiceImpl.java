@@ -65,6 +65,27 @@ public class BookingServiceImpl implements BookingService{
 
     }
 
+    @Override
+    public List<BookingResponse> getAllBooking(){
+        return bookingRepository.findAll()
+                .stream()
+                .map(this::mapToResponse)
+                .toList();
+    }
+
+    @Override
+    public BookingResponse getBookingById(Long id){
+        Booking book = bookingRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Booking not found"));
+
+        return mapToResponse(book);
+    }
+
+    @Override
+    public void cancelBooking(Long id){
+        bookingRepository.deleteById(id);
+    }
+
     private BookingResponse mapToResponse(Booking booking) {
         return BookingResponse.builder()
                 .id(booking.getId())
@@ -74,4 +95,7 @@ public class BookingServiceImpl implements BookingService{
                 .checkOut(booking.getCheckOut())
                 .build();
     }
-}
+    }
+
+
+
