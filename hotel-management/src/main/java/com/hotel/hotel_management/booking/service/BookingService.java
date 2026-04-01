@@ -9,9 +9,9 @@ public interface BookingService {
 
     BookingResponse createBooking(BookingRequest request);
 
-    /*List<BookingResponse> getAllBooking();
+    List<BookingResponse> getAllBooking();
 
     BookingResponse getBookingById(Long id);
 
-    Void cancelBooking(Long id);*/
+    void cancelBooking(Long id);
 }

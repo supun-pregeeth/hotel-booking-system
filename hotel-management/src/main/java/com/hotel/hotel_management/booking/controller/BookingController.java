@@ -5,10 +5,7 @@ import com.hotel.hotel_management.booking.dto.BookingResponse;
 import com.hotel.hotel_management.booking.service.BookingService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/bookings")
@@ -20,5 +17,11 @@ public class BookingController {
     @PostMapping
     public ResponseEntity<BookingResponse> createBooking(@RequestBody BookingRequest request){
         return ResponseEntity.ok(bookingService.createBooking(request));
+    }
+
+    @DeleteMapping
+    public ResponseEntity<String> cancelBooking(@PathVariable Long id){
+        bookingService.cancelBooking(id);
+        return ResponseEntity.ok("Booking deleted successfully");
     }
 }
