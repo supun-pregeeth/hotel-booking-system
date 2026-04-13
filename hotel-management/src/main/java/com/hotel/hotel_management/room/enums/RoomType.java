@@ -4,5 +4,6 @@ public enum RoomType {
 
     STANDARD,
     DELUXE,
-    SUITE
+    SUITE,
+    OCEAN_VIEW
 }
